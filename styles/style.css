@@ -1,0 +1,513 @@
+@charset "UTF-8";
+/******************************************************************
+Stylesheet: ベーススタイル
+******************************************************************/
+body {
+  background-color: #fbf2cb;
+  background-image: url(../../images/bg.jpg);
+  font: 16px / 1.6 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo", "メイリオ", "ＭＳ Ｐゴシック", "MS PGothic", "Osaka", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  display: block;
+  border: none;
+  padding: 0;
+}
+
+.mt-sm {
+  margin-top: 16px !important;
+}
+
+.mt-md {
+  margin-top: 25px !important;
+}
+
+.mt-lg {
+  margin-top: 80px !important;
+}
+
+.mb-sm {
+  margin-bottom: 16px !important;
+}
+
+.mb-md, .product__purchase .btn {
+  margin-bottom: 25px !important;
+}
+
+.mb-lg {
+  margin-bottom: 80px !important;
+}
+
+.main {
+  position: relative;
+  margin-bottom: 40px;
+  background: url(../../images/main_bg_sp.jpg) center top no-repeat;
+  background-size: 100%;
+  min-height: 124vw;
+}
+
+.main::after {
+  position: absolute;
+  bottom: -1%;
+  left: 0;
+  width: 100%;
+  height: 20vw;
+  content: "";
+  background: url("../../images/punc1.png") center bottom repeat-x;
+  background-size: 180%;
+}
+
+.main__img {
+  position: relative;
+  z-index: 10;
+}
+
+.main__logo {
+  position: absolute;
+  top: 3vw;
+  right: 3vw;
+  width: 20%;
+}
+
+.main__catch-sp {
+  position: absolute;
+  top: 10vw;
+  left: 12%;
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+
+.main__catch {
+  display: none;
+}
+
+.main__title {
+  position: absolute;
+  width: 84%;
+  margin: 0 auto;
+  top: 90vw;
+  right: 8%;
+}
+
+.product {
+  margin: 40px 15px;
+}
+
+.product__title {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.product__description {
+  padding: 0 17vw;
+  font-size: 11px;
+  font-size: 3.4375vw;
+}
+
+.product__price {
+  font-size: 9px;
+  font-size: 2.8125vw;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product__purchase {
+  margin: 0 auto;
+  padding: 0 10vw;
+}
+
+.product__purchase .btn {
+  background-color: #004B4A;
+  border-radius: 10px;
+  color: white;
+  display: block;
+  padding: 3% 10vw;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  font-size: 11px;
+  font-size: 3.4375vw;
+}
+
+.product__purchase .btn::after {
+  position: absolute;
+  font-family: "Material Icons";
+  content: "\e5e1";
+  top: 50%;
+  right: 5%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.product__purchase .btn:hover {
+  opacity: 0.8;
+}
+
+.product__purchase .btn:hover::after {
+  right: 10px;
+}
+
+.product__detail {
+  color: #fff;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  display: block;
+  margin: 0 auto;
+  padding: 0 10vw;
+}
+
+.salt {
+  position: relative;
+  margin: 120px 20px;
+}
+
+.salt::before {
+  position: absolute;
+  content: "";
+  background: url(../../images/c02_bg1_sp.png) center top no-repeat;
+  top: -6vw;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  background-size: 100%;
+}
+
+.salt__frame {
+  position: absolute;
+  content: "";
+  background: url(../../images/c02_bg2_sp.png) center top repeat-y;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+}
+
+.salt__inner {
+  position: relative;
+  padding: 0 25px;
+}
+
+.salt__inner > .btn {
+  margin: 0 auto;
+}
+
+.salt__inner::after {
+  position: absolute;
+  content: "";
+  background: url(../../images/c02_bg3_sp.png) center bottom no-repeat;
+  bottom: -2%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+}
+
+.salt__title {
+  width: 90%;
+  margin: 30px auto;
+}
+
+.salt__catch {
+  padding-left: 3vw;
+  margin-bottom: 10px;
+}
+
+.salt__item {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 30px auto;
+}
+
+.salt__item ul li {
+  color: #4ba200;
+  font-size: 12px;
+  font-size: 3.75vw;
+  font-weight: 700;
+  text-align: left;
+  padding-left: 30px;
+  position: relative;
+}
+
+.salt__item ul li::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  background: url(../../images/c02_check.png) no-repeat center center;
+  top: 0;
+  left: 0;
+  width: 5vw;
+  height: 100%;
+  background-size: contain;
+}
+
+.salt__item .btn {
+  padding: 0 1vw;
+}
+
+.recommend {
+  position: relative;
+  background-color: #ffd800;
+  margin-bottom: 20px;
+  height: 200vw;
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.recommend::before {
+  content: "";
+  position: absolute;
+  background: url(../../images/punc2.png) center top no-repeat;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  background-size: 180% auto;
+}
+
+.recommend::after {
+  content: "";
+  position: absolute;
+  background: url(../../images/punc3.png) center bottom no-repeat;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  background-size: 180% auto;
+}
+
+.recommend__inner {
+  height: 100%;
+}
+
+.recommend__top {
+  position: relative;
+  width: 100%;
+  height: 90%;
+}
+
+.recommend__top::after {
+  content: "";
+  position: absolute;
+  background: url(../../images/c03_bg.png) center bottom no-repeat;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  background-size: 120%;
+}
+
+.recommend__top .title {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.recommend__top .bubble {
+  position: absolute;
+  content: "";
+  top: 7%;
+  left: 0;
+  width: 35%;
+  margin-left: 20px;
+}
+
+.recommend__top .bath {
+  position: absolute;
+  content: "";
+  top: 15%;
+  right: 3%;
+  width: 60%;
+  margin: 0;
+}
+
+.recommend__top .product {
+  position: absolute;
+  content: "";
+  top: 43%;
+  left: 12%;
+  width: 53%;
+  margin: 20px 0 0 20px;
+}
+
+.recommend__top .catch {
+  position: absolute;
+  content: "";
+  bottom: 5%;
+  left: 5%;
+  width: 85%;
+}
+
+.recommend__bottom .btn {
+  color: #fff;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  display: block;
+  margin: 0 auto;
+}
+
+.shop-info {
+  padding: 25px;
+  text-align: center;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.shop-info::before {
+  position: absolute;
+  content: "";
+  background: url(../../images/shop_bg1_sp.png) center top no-repeat;
+  background-size: 90vw;
+  top: 16px;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  padding-bottom: 25px;
+}
+
+.shop-info__inner {
+  position: relative;
+  background-color: #fbf3d3;
+  padding: 10px;
+  padding-top: 25px;
+  height: 100%;
+  background: url(../../images/shop_bg2_sp.png) center bottom no-repeat;
+  background-size: 100%;
+}
+
+.shop-info__inner h2 {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 25px;
+}
+
+.shop-info__inner h3 {
+  color: #545454;
+  font-size: 1.1rem;
+}
+
+.shop-info__inner .btn {
+  color: #fff;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  display: block;
+  margin: 0 auto;
+}
+
+.shop-info__text {
+  font-size: 0.9rem;
+  padding: 5px 10px;
+  text-align: left;
+}
+
+.shop-info__sub-text {
+  font-size: 0.8rem;
+}
+
+.footer {
+  background-color: #ffd800;
+  padding: 40px 20px;
+  position: relative;
+}
+
+.footer::before {
+  position: absolute;
+  content: "";
+  background: url(../../images/punc2.png) center top no-repeat;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-size: 180% auto;
+}
+
+.footer__sns {
+  display: -ms-grid;
+  display: grid;
+  margin: 0 auto;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  gap: 10px 20px;
+  padding: 20px;
+}
+
+.footer__policy {
+  font-size: 0.8rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.footer__policy a {
+  margin-bottom: 10px;
+  text-decoration: underline !important;
+  color: black;
+}
+
+.footer__copyright {
+  font-size: 10px;
+  text-align: center;
+}
+
+@media screen and (min-width: 320px) {
+  /******************************************************************
+モバイル
+******************************************************************/
+}
+
+@media (min-width: 600px) {
+  /******************************************************************
+タブレット
+******************************************************************/
+  #content {
+    padding: 0 10vw;
+    margin: 0 auto;
+  }
+  .main__img {
+    display: block;
+    background-image: url(../../images/main_bg.jpg);
+    min-height: 763px;
+    background-size: 130%;
+  }
+  .main__logo {
+    top: 20px;
+    left: 85px;
+    height: 64px;
+  }
+  .main__catch {
+    display: block;
+    top: 10%;
+    left: 12%;
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+  }
+  .main__catch-sp {
+    display: none;
+  }
+  .product__description {
+    font-size: 1.2rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */

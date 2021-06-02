@@ -1,0 +1,436 @@
+/******************************************************************
+Stylesheet: ベーススタイル
+******************************************************************/
+// button -> a に
+
+body {
+  background-color: $cBgYellow;
+  background-image: url(../../images/bg.jpg);
+  font: 16px / 1.6 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo",
+    "メイリオ", "ＭＳ Ｐゴシック", "MS PGothic", "Osaka", sans-serif; //! font-size / line-height
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  // cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  display: block;
+  border: none;
+  padding: 0;
+}
+
+.mt-sm {
+  margin-top: 16px !important;
+}
+.mt-md {
+  margin-top: 25px !important;
+}
+.mt-lg {
+  margin-top: 80px !important;
+}
+.mb-sm {
+  margin-bottom: 16px !important;
+}
+.mb-md {
+  margin-bottom: 25px !important;
+}
+.mb-lg {
+  margin-bottom: 80px !important;
+}
+
+.main {
+  position: relative;
+  margin-bottom: 40px;
+  background: url(../../images/main_bg_sp.jpg) center top no-repeat;
+  background-size: 100%;
+  min-height: 124vw; //!
+  &::after {
+    position: absolute;
+    // display: inline-block;
+    bottom: -1%;
+    left: 0;
+    width: 100%;
+    height: 20vw;
+    content: "";
+    background: url("../../images/punc1.png") center bottom repeat-x; //!
+    background-size: 180%;
+  }
+
+  &__img {
+    position: relative;
+    // display: block;
+    z-index: 10; //!
+
+  }
+  &__logo {
+    position: absolute;
+    top: 3vw; //!
+    right: 3vw;
+    width: 20%;
+  }
+  &__catch-sp {
+    position: absolute;
+    top: 10vw; //!
+    left: 12%;
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+  }
+  &__catch {
+    display: none;
+  }
+
+  &__title {
+    position: absolute;
+    width: 84%;
+    margin: 0 auto;
+    top: 90vw; //!
+    right: 8%;
+  }
+}
+
+.product {
+  margin: 40px 15px;
+  &__title {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+  &__description {
+    // text-align: center;
+    padding: 0 17vw;
+    @include fz_vw(11);  //3.4375vw
+  }
+  &__price {
+    // display: inline-block;
+    @include fz_vw(9);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  &__purchase {
+    margin: 0 auto;
+    // width: 79%;
+    padding: 0 10vw;
+
+    & .btn {
+      background-color: $cDarkGreen;
+      border-radius: 10px;
+      color: $cWhite;
+      display: block;
+      padding: 3% 10vw;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      @include fz_vw(11);
+      @extend .mb-md;
+      // @include btn();  //疑似要素ずれる
+
+      &::after {
+        position: absolute;
+        font-family: "Material Icons";
+        content: "\e5e1";
+        top: 50%;
+        right: 5%;
+        transform: translateY(-50%);
+        transition: all 0.2s; //!
+      }
+      &:hover {
+        opacity: 0.8; //!
+        &::after {
+          // transform: translateX(1%);
+          right: 10px;
+        }
+      }
+    }
+  }
+
+  &__detail {
+    @include btn;
+    // width: 78%;
+    padding: 0 10vw;
+  }
+}
+
+.salt {
+  position: relative;
+  margin: 120px 20px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    background: url(../../images/c02_bg1_sp.png) center top no-repeat;
+    // top: -40px;
+    top: -6vw; //!
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    background-size: 100%;
+  }
+  &__frame {
+    position: absolute;
+    content: "";
+    background: url(../../images/c02_bg2_sp.png) center top repeat-y;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+  }
+  &__inner {
+    position: relative;
+    padding: 0 25px;
+    & > .btn {
+      // border: 1px solid rgb(143, 143, 143);
+      // padding: 0 10vw;
+      margin: 0 auto;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      background: url(../../images/c02_bg3_sp.png) center bottom no-repeat;
+      bottom: -2%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: 100%;
+    }
+  }
+  &__title {
+    width: 90%;
+    margin: 30px auto;
+  }
+  &__catch {
+    padding-left: 3vw;
+    margin-bottom: 10px;
+  }
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin: 30px auto;
+    
+    & ul {
+      & li {
+        color: #4ba200;
+        // font-size: 1.2rem;
+        @include fz_vw(12);
+        font-weight: 700;
+
+        // line-height: 30px;  //!
+        // align-items: center;
+        text-align: left; //!
+        padding-left: 30px; //!
+        position: relative;
+        &::before {
+          position: absolute;
+          content: "";
+          display: inline-block;
+          background: url(../../images/c02_check.png) no-repeat center center; //!
+          top: 0;
+          left: 0;
+          // width: 25px; //?
+          width: 5vw;
+          // height: 30px; //?
+          height: 100%;
+          background-size: contain; //?
+        }
+      }
+    }
+    & .btn {
+      padding: 0 1vw;
+    }
+  }
+}
+
+.recommend {
+  position: relative;
+  background-color: $cBgMustard;
+  margin-bottom: 20px;
+  height: 200vw;
+  padding-top: 60px;
+  padding-bottom: 80px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    background: url(../../images/punc2.png) center top no-repeat;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    background-size: 180% auto;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    background: url(../../images/punc3.png) center bottom no-repeat;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    background-size: 180% auto;
+  }
+  &__inner {
+    height: 100%;
+  }
+  &__top {
+    position: relative;
+    width: 100%;
+    height: 90%;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background: url(../../images/c03_bg.png) center bottom no-repeat;
+      bottom: 0;
+      left: 0;
+      width: 100%; //仮
+      height: 100%; //仮
+      background-size: 100%;
+      background-size: 120%;
+    }
+    & .title {
+      width: 70%;
+      margin: 0 auto;
+    }
+    & .bubble {
+      position: absolute;
+      content: "";
+      top: 7%;
+      left: 0;
+      width: 35%;
+      margin-left: 20px;
+    }
+    & .bath {
+      position: absolute;
+      content: "";
+      top: 15%;
+      right: 3%;
+      width: 60%;
+      margin: 0;
+    }
+    & .product {
+      position: absolute;
+      content: "";
+      top: 43%;
+      left: 12%;
+      width: 53%;
+      margin: 20px 0 0 20px;
+    }
+    & .catch {
+      position: absolute;
+      content: "";
+      bottom: 5%;
+      left: 5%;
+      width: 85%;
+      // margin: 20px 0 0 20px;
+    }
+  }
+  &__bottom {
+    & .btn {
+      @include btn();
+      // display: block;
+    }
+  }
+}
+
+.shop-info {
+  padding: 25px;
+  // margin: 20px;
+  text-align: center;
+  position: relative;
+  margin-bottom: 10px;
+  &::before {
+    position: absolute;
+    content: "";
+    background: url(../../images/shop_bg1_sp.png) center top no-repeat;
+    background-size: 90vw;
+    top: 16px;
+    left: 0;
+    width: 100%;
+    height: 10vh;
+    padding-bottom: 25px;
+  }
+  &__inner {
+    position: relative;
+    background-color: #fbf3d3;
+    padding: 10px;
+    padding-top: 25px;
+    // width: 90% auto;
+    height: 100%;
+
+    background: url(../../images/shop_bg2_sp.png) center bottom no-repeat;
+    // bottom: 0;
+    background-size: 100%;
+
+    & h2 {
+      width: 80%;
+      margin: 0 auto;
+      padding-bottom: 25px;
+    }
+    & h3 {
+      color: #545454;
+      font-size: 1.1rem;
+    }
+    & .btn {
+      @include btn;
+    }
+  }
+  &__text {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    text-align: left;
+  }
+  &__sub-text {
+    font-size: 0.8rem;
+  }
+}
+
+.footer {
+  background-color: $cBgMustard;
+  padding: 40px 20px;
+  position: relative;
+  &::before {
+    position: absolute;
+    content: "";
+    background: url(../../images/punc2.png) center top no-repeat;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-size: 180% auto;
+  }
+  &__sns {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+    padding: 20px;
+  }
+  &__policy {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-bottom: 15px;
+
+    & a {
+      margin-bottom: 10px;
+      text-decoration: underline !important;
+      color: black;
+    }
+  }
+  &__copyright {
+    font-size: 10px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,19 @@
+@import "variables";
+@import "modules/mixin";
+@import "breakpoints/base";
+
+@media screen and (min-width: 320px) {
+  @import "breakpoints/sp";
+}
+
+@media (min-width: 600px) {
+  @import "breakpoints/600up";
+}
+
+@media (min-width: 960px) {
+  @import "breakpoints/960up";
+}
+
+// @media (min-width: 1280px) {
+//   @import "breakpoints/1280up";
+// }
