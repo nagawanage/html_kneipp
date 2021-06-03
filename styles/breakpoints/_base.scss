@@ -4,8 +4,6 @@ Stylesheet: ベーススタイル
 // button -> a に
 
 body {
-  background-color: $cBgYellow;
-  background-image: url(../../images/bg.jpg);
   font: 16px / 1.6 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo",
     "メイリオ", "ＭＳ Ｐゴシック", "MS PGothic", "Osaka", sans-serif; //! font-size / line-height
 }
@@ -49,12 +47,20 @@ button {
   margin-bottom: 80px !important;
 }
 
+#container {
+  background-color: $cBgYellow;
+  background-image: url(../../images/bg.jpg);
+  text-align: center;
+}
+
 .main {
   position: relative;
   margin-bottom: 40px;
   background: url(../../images/main_bg_sp.jpg) center top no-repeat;
   background-size: 100%;
   min-height: 124vw; //!
+  margin: 0 auto;
+
   &::after {
     position: absolute;
     // display: inline-block;
@@ -66,12 +72,10 @@ button {
     background: url("../../images/punc1.png") center bottom repeat-x; //!
     background-size: 180%;
   }
-
   &__img {
     position: relative;
     // display: block;
     z-index: 10; //!
-
   }
   &__logo {
     position: absolute;
@@ -84,11 +88,12 @@ button {
     top: 10vw; //!
     left: 12%;
     width: 80%;
-    display: block;
+    // display: block;
     margin: 0 auto;
   }
   &__catch {
     display: none;
+    position: absolute;
   }
 
   &__title {
@@ -110,7 +115,7 @@ button {
   &__description {
     // text-align: center;
     padding: 0 17vw;
-    @include fz_vw(11);  //3.4375vw
+    @include fz_vw(11); //3.4375vw
   }
   &__price {
     // display: inline-block;
@@ -209,6 +214,9 @@ button {
   &__title {
     width: 90%;
     margin: 30px auto;
+    & .title {
+      display: none;
+    }
   }
   &__catch {
     padding-left: 3vw;
@@ -219,7 +227,11 @@ button {
     grid-template-columns: 1fr 1fr;
     align-items: center;
     margin: 30px auto;
-    
+
+    &--left {
+      display: block;
+      margin: 0 auto;
+    }
     & ul {
       & li {
         color: #4ba200;
@@ -230,7 +242,8 @@ button {
         // line-height: 30px;  //!
         // align-items: center;
         text-align: left; //!
-        padding-left: 30px; //!
+        // padding-left: 30px; //!
+        padding-left: 5vw; //!
         position: relative;
         &::before {
           position: absolute;
@@ -257,9 +270,17 @@ button {
   position: relative;
   background-color: $cBgMustard;
   margin-bottom: 20px;
-  height: 200vw;
-  padding-top: 60px;
-  padding-bottom: 80px;
+  // height: 190vw;
+  padding-top: 80px;
+  padding-bottom: 100px;
+
+  background: $cBgMustard url(../../images/c03_bg.png) center bottom no-repeat;
+  bottom: 0;
+  left: 0;
+  // width: 100%; //仮
+  // height: 100%; //仮
+  background-size: 100%;
+  background-size: 120%;
 
   &::before {
     content: "";
@@ -275,31 +296,22 @@ button {
     content: "";
     position: absolute;
     background: url(../../images/punc3.png) center bottom no-repeat;
-    bottom: 0;
+    bottom: -1vw;
     left: 0;
     width: 100%;
     height: 10vh;
     background-size: 180% auto;
   }
   &__inner {
-    height: 100%;
+    position: relative;
+    z-index: 10;
   }
   &__top {
     position: relative;
-    width: 100%;
-    height: 90%;
+    // width: 100%;
+    // height: 90%;
+    height: 150vw;
 
-    &::after {
-      content: "";
-      position: absolute;
-      background: url(../../images/c03_bg.png) center bottom no-repeat;
-      bottom: 0;
-      left: 0;
-      width: 100%; //仮
-      height: 100%; //仮
-      background-size: 100%;
-      background-size: 120%;
-    }
     & .title {
       width: 70%;
       margin: 0 auto;
@@ -331,13 +343,18 @@ button {
     & .catch {
       position: absolute;
       content: "";
-      bottom: 5%;
-      left: 5%;
-      width: 85%;
-      // margin: 20px 0 0 20px;
+      // bottom: 5vw;
+      left: 5vw;
+      // margin: 0;
+      width: 89vw;
+
+      // left: 0;
+      text-align: center;
+      top: 115vw;
     }
   }
   &__bottom {
+    margin: 0 13vw;
     & .btn {
       @include btn();
       // display: block;
@@ -351,28 +368,39 @@ button {
   text-align: center;
   position: relative;
   margin-bottom: 10px;
-  &::before {
-    position: absolute;
-    content: "";
-    background: url(../../images/shop_bg1_sp.png) center top no-repeat;
-    background-size: 90vw;
-    top: 16px;
-    left: 0;
-    width: 100%;
-    height: 10vh;
-    padding-bottom: 25px;
-  }
+  // &::before {
+  //   position: absolute;
+  //   content: "";
+  //   background: url(../../images/shop_bg1_sp.png) center top no-repeat;
+  //   background-size: 90vw;
+  //   top: 16px;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 10vh;
+  //   padding-bottom: 25px;
+  // }
   &__inner {
     position: relative;
     background-color: #fbf3d3;
     padding: 10px;
     padding-top: 25px;
     // width: 90% auto;
-    height: 100%;
+    // height: 100%;
 
     background: url(../../images/shop_bg2_sp.png) center bottom no-repeat;
-    // bottom: 0;
     background-size: 100%;
+
+    &::before {
+      position: absolute;
+      content: "";
+      background: url(../../images/shop_bg1_sp.png) left top no-repeat;
+      background-size: 90vw;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 10vh;
+      padding-bottom: 25px;
+    }
 
     & h2 {
       width: 80%;
@@ -385,6 +413,8 @@ button {
     }
     & .btn {
       @include btn;
+      margin-bottom: 20px;
+      padding: 10px 8vw;
     }
   }
   &__text {
@@ -416,7 +446,8 @@ button {
     margin: 0 auto;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px 20px;
-    padding: 20px;
+    padding: 20px 0;
+    width: 80%;
   }
   &__policy {
     font-size: 0.8rem;

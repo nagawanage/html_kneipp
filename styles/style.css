@@ -3,8 +3,6 @@
 Stylesheet: ベーススタイル
 ******************************************************************/
 body {
-  background-color: #fbf2cb;
-  background-image: url(../../images/bg.jpg);
   font: 16px / 1.6 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo", "メイリオ", "ＭＳ Ｐゴシック", "MS PGothic", "Osaka", sans-serif;
 }
 
@@ -51,12 +49,19 @@ button {
   margin-bottom: 80px !important;
 }
 
+#container {
+  background-color: #fbf2cb;
+  background-image: url(../../images/bg.jpg);
+  text-align: center;
+}
+
 .main {
   position: relative;
   margin-bottom: 40px;
   background: url(../../images/main_bg_sp.jpg) center top no-repeat;
   background-size: 100%;
   min-height: 124vw;
+  margin: 0 auto;
 }
 
 .main::after {
@@ -87,12 +92,12 @@ button {
   top: 10vw;
   left: 12%;
   width: 80%;
-  display: block;
   margin: 0 auto;
 }
 
 .main__catch {
   display: none;
+  position: absolute;
 }
 
 .main__title {
@@ -225,6 +230,10 @@ button {
   margin: 30px auto;
 }
 
+.salt__title .title {
+  display: none;
+}
+
 .salt__catch {
   padding-left: 3vw;
   margin-bottom: 10px;
@@ -241,13 +250,18 @@ button {
   margin: 30px auto;
 }
 
+.salt__item--left {
+  display: block;
+  margin: 0 auto;
+}
+
 .salt__item ul li {
   color: #4ba200;
   font-size: 12px;
   font-size: 3.75vw;
   font-weight: 700;
   text-align: left;
-  padding-left: 30px;
+  padding-left: 5vw;
   position: relative;
 }
 
@@ -271,9 +285,13 @@ button {
   position: relative;
   background-color: #ffd800;
   margin-bottom: 20px;
-  height: 200vw;
-  padding-top: 60px;
-  padding-bottom: 80px;
+  padding-top: 80px;
+  padding-bottom: 100px;
+  background: #ffd800 url(../../images/c03_bg.png) center bottom no-repeat;
+  bottom: 0;
+  left: 0;
+  background-size: 100%;
+  background-size: 120%;
 }
 
 .recommend::before {
@@ -291,7 +309,7 @@ button {
   content: "";
   position: absolute;
   background: url(../../images/punc3.png) center bottom no-repeat;
-  bottom: 0;
+  bottom: -1vw;
   left: 0;
   width: 100%;
   height: 10vh;
@@ -299,25 +317,13 @@ button {
 }
 
 .recommend__inner {
-  height: 100%;
+  position: relative;
+  z-index: 10;
 }
 
 .recommend__top {
   position: relative;
-  width: 100%;
-  height: 90%;
-}
-
-.recommend__top::after {
-  content: "";
-  position: absolute;
-  background: url(../../images/c03_bg.png) center bottom no-repeat;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: 100%;
-  background-size: 120%;
+  height: 150vw;
 }
 
 .recommend__top .title {
@@ -355,9 +361,14 @@ button {
 .recommend__top .catch {
   position: absolute;
   content: "";
-  bottom: 5%;
-  left: 5%;
-  width: 85%;
+  left: 5vw;
+  width: 89vw;
+  text-align: center;
+  top: 115vw;
+}
+
+.recommend__bottom {
+  margin: 0 13vw;
 }
 
 .recommend__bottom .btn {
@@ -375,26 +386,25 @@ button {
   margin-bottom: 10px;
 }
 
-.shop-info::before {
-  position: absolute;
-  content: "";
-  background: url(../../images/shop_bg1_sp.png) center top no-repeat;
-  background-size: 90vw;
-  top: 16px;
-  left: 0;
-  width: 100%;
-  height: 10vh;
-  padding-bottom: 25px;
-}
-
 .shop-info__inner {
   position: relative;
   background-color: #fbf3d3;
   padding: 10px;
   padding-top: 25px;
-  height: 100%;
   background: url(../../images/shop_bg2_sp.png) center bottom no-repeat;
   background-size: 100%;
+}
+
+.shop-info__inner::before {
+  position: absolute;
+  content: "";
+  background: url(../../images/shop_bg1_sp.png) left top no-repeat;
+  background-size: 90vw;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  padding-bottom: 25px;
 }
 
 .shop-info__inner h2 {
@@ -414,6 +424,8 @@ button {
   font-size: 1.2rem;
   display: block;
   margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 10px 8vw;
 }
 
 .shop-info__text {
@@ -450,7 +462,8 @@ button {
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
   gap: 10px 20px;
-  padding: 20px;
+  padding: 20px 0;
+  width: 80%;
 }
 
 .footer__policy {
@@ -481,33 +494,78 @@ button {
 タブレット
 ******************************************************************/
   #content {
-    padding: 0 10vw;
     margin: 0 auto;
   }
-  .main__img {
+  .main {
     display: block;
-    background-image: url(../../images/main_bg.jpg);
-    min-height: 763px;
-    background-size: 130%;
+    background: url(../../images/main_bg.jpg) center top no-repeat;
+    min-height: 65vw;
+    background-size: 133%;
+  }
+  .main::after {
+    background-size: 100% auto;
+    background-position: center;
+    top: 50vw;
+    left: 0;
+    height: 20vw;
+    width: 100%;
   }
   .main__logo {
     top: 20px;
     left: 85px;
     height: 64px;
+    width: 10%;
   }
-  .main__catch {
-    display: block;
-    top: 10%;
-    left: 12%;
-    width: 80%;
-    display: block;
-    margin: 0 auto;
+  .main__title {
+    left: 12vw;
+    top: 29vw;
+    margin: 0;
+    width: 33vw;
   }
   .main__catch-sp {
     display: none;
   }
+  .main__catch {
+    display: block;
+    top: 7vw;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    width: 54%;
+  }
   .product__description {
     font-size: 1.2rem;
+  }
+  .product__purchase {
+    padding: 0 20vw;
+  }
+  .product__detail {
+    padding: 0 20vw;
+  }
+  .salt .title-sp {
+    display: none;
+  }
+  .footer .wrapper {
+    margin-top: 30px;
+  }
+  .footer__sns {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 30px 0;
+    width: 90%;
+  }
+  .recommend .catch {
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .wrapper {
+    margin: 0 auto;
+    max-width: 1070px;
+    width: 70%;
   }
 }
 /*# sourceMappingURL=style.css.map */
